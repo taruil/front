@@ -123,3 +123,8 @@ header a.active::after {
 #lokiTop.shown {
   opacity: 1;
 }
+.line{
+    width: 0.5px;
+    height: 100%;
+    margin-top: 10px;
+}
