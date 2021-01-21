@@ -195,70 +195,18 @@ include_once "base.php";
 
     <div class="row">
       <div class="col-lg-6">
-        <h3 class="resume-title">Summary</h3>
-        <div class="resume-item pb-0">
-          <h4>name</h4>
-          <p><em>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis illum dolore ut dolores id nobis explicabo voluptates soluta iusto fugiat!</em></p>
+        <div class="resume-item">
           <p>
             <ul>
-              <li>New Taipei City, Taiwan</li>
-              <li>test@msn.com</li>
-            </ul>
-          </p>
-        </div>
+			  <?php
+                $rows=$tb2->all();
 
-        <h3 class="resume-title">Education</h3>
-        <div class="resume-item">
-          <h4>ppppppppp</h4>
-          <h5>20000000000000</h5>
-          <p><em>lorem59rgrswa</em></p>
-          <p>
-            <ul>
-              <li>HTML5/CSS3</li>
-              <li>JavaScript/JQuery</li>
-              <li>PHP/MySQL</li>
-            </ul>
-          </p>
-        </div>
-        <div class="resume-item">
-          <h4>Lorem, ipsum dolor.</h4>
-          <h5>20000000000000</h5>
-          <p><em>fwpjiopji[f</em></p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias magnam adipisci eius, ducimus quia iusto ratione hic quod optio quos!</p>
-        </div>
-      </div>
-      <div class="col-lg-6">
-        <h3 class="resume-title">Work Experience</h3>
-        <div class="resume-item">
-          <h4>Lorem, ipsum dolor.</h4>
-          <h5>20000000000000</h5>
-          <p><em>Lorem ipsum dolor sit amet.</em></p>
-          <p>
-            <ul>
-              <li>Lorem ipsum dolor sit amet.</li>
-              <li>Lorem ipsum dolor sit amet.</li>
-              <li>Lorem ipsum dolor sit amet.</li>
-              <li>Lorem ipsum dolor sit amet.</li>
-              <li>Lorem ipsum dolor sit amet.</li>
-            </ul>
-          </p>
-        </div>
-        <div class="resume-item">
-          <h4>Lorem ipsum dolor sit amet.</h4>
-          <h5>2000000000</h5>
-          <p><em>200000000</em></p>
-          <p>
-            <ul>
-              <li>lorem22222222222222</li>
-              <li>lorem58948652hiuohu
-                  <ul>
-                    <br>
-                    <li>lorem5</li>
-                    <li>lorem22222222222222 </li>
-                    <li>lorem22222222222222 </li>
-                  </ul>
-              </li>
-              <li>lorem22222222222222</li>
+                foreach($rows as $row){
+              ?>
+              <li><?=$row["text"]?></li>
+			  <?php
+			    }
+              ?>
             </ul>
           </p>
         </div>
@@ -280,32 +228,22 @@ include_once "base.php";
       </div>
       <!-- Accordion -->
       <div class="col-12 col-lg-6 accordion list-group px-3" id="skillsmenu">
-	    
-        <div class="card" data-toggle="list" data-target="#skillsimg1">
-          <a href="#skillsmsg1" class="card-header h5 text-decoration-none alert-info" data-toggle="collapse">
-            sk1
-            <small class="text-muted float-right">description</small>
-          </a>
-          <div id="skillsmsg1" data-parent="#skillsmenu" class="collapse show">
-            <div class="card-body">
-              <p></p>
-              <p class="float-right text-danger">
-              </p>
-            </div>
+		<?php
+		$skill_count=0;
+        $rows=$tb3->all();
+
+        foreach($rows as $row){
+			$skill_count++;
+        ?>
+        <div class="card" data-toggle="list" data-target="#skillsimg<?=$skill_count?>">
+          <a href="#skillsmsg<?=$skill_count?>" class="card-header h5 text-decoration-none alert-info" data-toggle="collapse"><?=$row["text"]?></a>
+          <div id="skillsmsg<?=$skill_count?>" data-parent="#skillsmenu" class="collapse">
+            <div class="card-body"><?=$row["text"]?></div>
           </div>
         </div>
-        <div class="card" data-toggle="list" data-target="#skillsimg2">
-          <a href="#skillsmsg2" class="card-header h5 text-decoration-none alert-info" data-toggle="collapse">Item #2</a>
-          <div id="skillsmsg2" data-parent="#skillsmenu" class="collapse">
-            <div class="card-body">...B</div>
-          </div>
-        </div>
-        <div class="card" data-toggle="list" data-target="#skillsimg3">
-          <a href="#skillsmsg3" class="card-header h5 text-decoration-none alert-info" data-toggle="collapse">Item #3</a>
-          <div id="skillsmsg3" data-parent="#skillsmenu" class="collapse">
-            <div class="card-body">...C</div>
-          </div>
-        </div>
+		<?php
+		}
+        ?>
       </div>
     </article>
   </section>
@@ -316,33 +254,23 @@ include_once "base.php";
     </header>
     <article class="tab-content py-5">
       <div class="row tab-pane fade show active" id="roomA">
+		<?php
+        $rows=$tb4->all();
+
+        foreach($rows as $row){
+        ?>
         <div class="col-12 col-md-6 col-lg-4 mb-5">
           <div class="card">
-            <img src="https://fakeimg.pl/300x200" class="card-img-top">
+            <img src="<?=$row["text"]?>" class="card-img-top">
             <div class="card-body">
               <h5>Lorem.</h5>
               <p class="card-text">Lorem, ipsum dolor.<small class="text-muted float-right">Lorem | Lorem</small></p>
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-4 mb-5">
-          <div class="card">
-            <img src="https://fakeimg.pl/300x200" class="card-img-top">
-            <div class="card-body">
-              <h5>Lorem</h5>
-              <p class="card-text">Lorem<small class="text-muted float-right">Lorem |Lorem</small></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4 mb-5">
-          <div class="card">
-            <img src="https://fakeimg.pl/300x200" class="card-img-top">
-            <div class="card-body">
-              <h5>Lorem</h5>
-              <p class="card-text">Lorem<small class="text-muted float-right">Lorem | Lorem</small></p>
-            </div>
-          </div>
-        </div>
+		<?php
+		}
+        ?>
       </div>
     </article>
   </section>
