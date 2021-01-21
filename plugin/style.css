@@ -4,18 +4,18 @@ body {
 }
 
 /*slider*/
-#lokiSlider img {
+#slider img {
   object-fit: cover;
   filter: grayscale(45%);
 }
 
-#lokiSlider .carousel-caption {
+#slider .carousel-caption {
   top: 0;
   bottom: 0;
   text-shadow: 0.3rem 0.3rem 0.4rem #000;
 }
 
-#lokiSlider .carousel-indicators li {
+#slider .carousel-indicators li {
   background: whitesmoke;
   height: 15px;
   width: 15px;
@@ -55,27 +55,27 @@ footer a.position-fixed {
   }
 }
 
-/*room*/
-#lokiRoom .nav-tabs .nav-link {
+/*about*/
+#about .nav-tabs .nav-link {
   flex: 0 1 15%;
   box-shadow: 1px -1px 2px 0px #8888;
   border: 0;
   border-bottom: 1px solid transparent;
 }
-#lokiRoom .nav-tabs .nav-link.active {
+#about .nav-tabs .nav-link.active {
   background-color: #17a2b8 !important;
   color: #fff !important;
   border-bottom: 1px solid #17a2b8;
 }
-#lokiRoom nav.nav-tabs {
+#about nav.nav-tabs {
   border-bottom: 1px solid #17a2b8;
 }
-#lokiRoom .tab-content .row.active {
+#about .tab-content .row.active {
   display: flex;
 }
 
-/*facility*/
-#lokiFacility {
+/*experience*/
+#experience {
   background: url("https://picsum.photos/1920/1080/?random=4"),
     radial-gradient(circle, #777 30%, #ccc 70%),
     linear-gradient(to right, #999, #444);
@@ -85,8 +85,13 @@ footer a.position-fixed {
   background-attachment: fixed;
   text-shadow: 0.3rem 0.3rem 0.4rem #000;
 }
+.timeline{
+  width: 0.5px;
+  height: 100%;
+  margin-top: 10px;
+}
 @media (min-width: 992px) {
-  #lokiFacility li.col-lg-6:nth-of-type(even) img {
+  #experience li.col-lg-6:nth-of-type(even) img {
     order: 1;
   }
 }
@@ -110,21 +115,16 @@ header a.active::after {
   width: 100%;
 }
 
-/*Transport*/
-#lokitrans > iframe {
+/*Portfolio*/
+#portfolio > iframe {
   filter: grayscale(0.7) brightness(0.5);
 }
 
-#lokiTop {
+#top {
   opacity: 0;
   transition: 0.5s ease;
 }
 
-#lokiTop.shown {
+#top.shown {
   opacity: 1;
-}
-.line{
-    width: 0.5px;
-    height: 100%;
-    margin-top: 10px;
 }

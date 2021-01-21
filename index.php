@@ -1,10 +1,14 @@
+<?php
+include_once "base.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Resume </title>
+  <title>Chia Yu Chen's Resume</title>
   <link rel="stylesheet" href="plugin/bootstrap.min.css">
   <link rel="stylesheet" href="plugin/style.css">
   <link rel="shortcut icon" href="media/favicon.ico" type="image/x-icon">
@@ -12,6 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Open+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
   <script src="https://kit.fontawesome.com/fa483230ea.js" crossorigin="anonymous"></script>
@@ -22,38 +27,112 @@
 </head>
 
 <body>
-  <!-- menu -->
-  <header class="fixed-top" id="lokiMenu">
+  <!-- 選單區 -->
+  <header class="fixed-top bg-dark" id="Menu">
     <nav class="navbar navbar-expand-lg navbar-dark container">
-      <a class="navbar-brand" href="./">My Resume </a>
+      <a class="navbar-brand" href="./">My Resume</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#minMenu">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="minMenu">
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
           <li class="nav-item">
-            <a class="nav-link px-4" href="#lokiRoom"><i class="fas fa-bed"></i> About</a>
+            <a class="nav-link px-4" href="#about">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link px-4" href="#lokiFacility"><i class="fas fa-gamepad"></i> Experience</a>
+            <a class="nav-link px-4" href="#experience">Experience</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link px-4" href="#lokifood"><i class="fas fa-utensils"></i> Ability</a>
+            <a class="nav-link px-4" href="#skills">Skills</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link px-4" href="#lokitrans"><i class="fas fa-taxi"></i> Portfolio</a>
+            <a class="nav-link px-4" href="#portfolio">Portfolio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link px-4" href="#lokicontact"><i class="fas fa-headset"></i> Contact</a>
+            <a class="nav-link px-4" href="#contact">Contact</a>
           </li>
         </ul>
       </div>
     </nav>
   </header>
+  <!-- 輪播廣告區 -->
+  <section id="slider" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#slider" data-slide-to="0" class="active"></li>
+      <li data-target="#slider" data-slide-to="1"></li>
+      <li data-target="#slider" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item vh-100 active">
+        <img src="https://picsum.photos/1920/1080/?random=1" class="w-100 h-100">
+        <div class="carousel-caption d-flex flex-column justify-content-center">
+          <h1>First slide label</h1>
+          <p class="d-none d-md-block">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        </div>
+      </div>
+      <div class="carousel-item vh-100">
+        <img src="https://picsum.photos/1920/1080/?random=2" class="w-100 h-100">
+        <div class="carousel-caption d-flex flex-column justify-content-center">
+          <h1>Second slide label</h1>
+          <p class="d-none d-md-block">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+      </div>
+      <div class="carousel-item vh-100">
+        <img src="https://picsum.photos/1920/1080/?random=3" class="w-100 h-100">
+        <div class="carousel-caption d-flex flex-column justify-content-center">
+          <h1>Third slide label</h1>
+          <p class="d-none d-md-block">Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#slider" data-slide="prev">
+      <i class="fas fa-angle-double-left fa-2x"></i>
+    </a>
+    <a class="carousel-control-next" href="#slider" data-slide="next">
+      <i class="fas fa-angle-double-right fa-2x"></i>
+    </a>
+  </section>
   <!-- About -->
-  <section id="lokiRoom" class="container py-5" style="margin-top:50px">
-    <header class="text-center">
-      <h2 class="text-info pb-3">About</h2>
+  <section id="about" class="py-5 text-white">
+    <header class="text-center container">
+      <h2 class="pb-3">About</h2>
+    </header>
+    <article class="tab-content py-5">
+      <div class="row tab-pane fade show active">
+        <div class="col-12 col-md-6 col-lg-4 mb-5">
+          <img src="media/rabbit.jpg">
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 mb-5">
+          <p class="col-12 text-muted text-center mb-5"><?=$tb1->all()[0]["text"]?></p>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 mb-5">
+          <h4 class="text-primary">求職條件</h4>
+          <p class="col-12 text-muted text-center mb-5">
+            <?=$tb6->all()[0]["text"]?>
+          </p>
+        </div>
+      </div>
+    </article>
+  </section>
+  <!-- <section id="about" class="py-5">
+    <header class="text-center container">
+      <h2 class="text-info mt-5">About Me</h2>
+    </header>
+    <article class="tab-content py-5">
+      <div class="row tab-pane fade show active">
+        <div class="col-12 col-md-6 col-lg-4 mb-5">
+          <img src="media/rabbit.jpg">
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 mb-5">
+          <p class="col-12 text-muted text-center mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, expedita ex quia laboriosam cum impedit soluta veritatis dicta ullam earum, odio nam voluptates eos itaque corporis ipsum. Quibusdam, rem repellendus.</p>
+        </div>
+      </div>
+    </article>
+  </section> -->
+  <!-- experience -->
+  <!-- <section id="experience" class="py-5 text-white">
+    <header class="text-center container">
+      <h2 class="pb-3">Experience</h2>
     </header>
     <article class="container px-0">
       <ul class="list-unstyled row">
@@ -65,192 +144,202 @@
               corporis!</p>
           </div>
         </li>
+        <li class="media flex-column align-items-center flex-sm-row align-items-sm-start col-lg-6 mb-4">
+          <img src="https://fakeimg.pl/300x300" class="pb-3 col-sm-6 jojo animate__animated">
+          <div class="media-body col-sm-6">
+            <h5 class="mt-0 mb-1">based media object</h5>
+            <p class="pb-3 border-bottom border-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore,
+              corporis!</p>
+          </div>
+        </li>
+        <li class="media flex-column align-items-center flex-sm-row align-items-sm-start col-lg-6 mb-4" data-jojo-duration="2s" data-jojo-delay="5s">
+          <img src="https://fakeimg.pl/300x300" class="pb-3 col-sm-6 jojo animate__animated">
+          <div class="media-body col-sm-6">
+            <h5 class="mt-0 mb-1">based media object</h5>
+            <p class="pb-3 border-bottom border-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore,
+              corporis!</p>
+          </div>
+        </li>
+        <li class="media flex-column align-items-center flex-sm-row align-items-sm-start col-lg-6 mb-4">
+          <img src="https://fakeimg.pl/300x300" class="pb-3 col-sm-6 jojo animate__animated">
+          <div class="media-body col-sm-6">
+            <h5 class="mt-0 mb-1">based media object</h5>
+            <p class="pb-3 border-bottom border-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore,
+              corporis!</p>
+          </div>
+        </li>
+        <li class="media flex-column align-items-center flex-sm-row align-items-sm-start col-lg-6 mb-4" data-jojo-duration="2s" data-jojo-delay="5s">
+          <img src="https://fakeimg.pl/300x300" class="pb-3 col-sm-6 jojo animate__animated">
+          <div class="media-body col-sm-6">
+            <h5 class="mt-0 mb-1">based media object</h5>
+            <p class="pb-3 border-bottom border-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore,
+              corporis!</p>
+          </div>
+        </li>
+        <li class="media flex-column align-items-center flex-sm-row align-items-sm-start col-lg-6 mb-4">
+          <img src="https://fakeimg.pl/300x300" class="pb-3 col-sm-6 jojo animate__animated">
+          <div class="media-body col-sm-6">
+            <h5 class="mt-0 mb-1">based media object</h5>
+            <p class="pb-3 border-bottom border-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore,
+              corporis!</p>
+          </div>
+        </li>
       </ul>
     </article>
-  </section>
-  <!-- Experience -->
-  <section id="lokiFacility" class="py-5 text-white">
-    <header class="text-center container">
-      <h2 class="pb-3">Experience</h2>
-    </header>
-    <article class="container px-0">
-<div class="d-flex flex-column flex-md-wrap flex-nowrap" style="max-height:1500px">
-                
-        
-                <div class="expblock mb-4 pr-5 d-flex flex-row">
-                    <div class="timeline d-flex flex-column align-items-center pr-3">
-                        <p class="chginput expchginput text-secondary" data-id="竹冶聯合設計工作室" data-col="year">2019</p>
-                        <i class="far fa-circle text-secondary small" aria-hidden="true"></i>
-                        <div class="line bg-secondary"></div>
-                    </div>
-                    <div class="pt-4">
-                        <h5 class="chginput expchginput py-2" data-id="竹冶聯合設計工作室" data-col="title">專案企劃</h5>
-                        <p>竹冶聯合設計工作室</p>
-                        <p class="chginput expchginput" data-id="竹冶聯合設計工作室" data-col="period">2019/4-2019/10</p>
-                        <p class="chginput expchginput" data-id="竹冶聯合設計工作室" data-col="event">．新竹縣關西鎮小招牌改造計畫<br>．湖口鄉裝甲新村-歷史建築景觀美化案<br>．湖口鄉裝甲新村活化企劃及史料紀錄<br>．新竹縣縣史館年度活動企劃</p>
-                    </div>
-                </div>
+  </section> -->
+  <!-- experience -->
+  <section id="experience" class="container experience py-5 mt-3 section-bg text-white">
+    <div class="section-title">
+      <h2>Experience</h2>
+    </div>
 
-        
-                <div class="expblock mb-4 pr-5 d-flex flex-row">
-                    <div class="timeline d-flex flex-column align-items-center pr-3">
-                        <p class="chginput expchginput text-secondary" data-id="MOUNT BULLER CHALET HOTEL" data-col="year">2018</p>
-                        <i class="far fa-circle text-secondary small" aria-hidden="true"></i>
-                        <div class="line bg-secondary"></div>
-                    </div>
-                    <div class="pt-4">
-                        <h5 class="chginput expchginput py-2" data-id="MOUNT BULLER CHALET HOTEL" data-col="title">Supervisor(FullTime)</h5>
-                        <p>MOUNT BULLER CHALET HOTEL</p>
-                        <p class="chginput expchginput" data-id="MOUNT BULLER CHALET HOTEL" data-col="period">2018/06-2018/11</p>
-                        <p class="chginput expchginput" data-id="MOUNT BULLER CHALET HOTEL" data-col="event">Housekeeping/Public Area Cleaning<br>帶領15人左右團隊，控管進度、分配工作、處理突發狀況，並完成主管交代事項。</p>
-                    </div>
-                </div>
-
-        
-                <div class="expblock mb-4 pr-5 d-flex flex-row">
-                    <div class="timeline d-flex flex-column align-items-center pr-3">
-                        <p class="chginput expchginput text-secondary" data-id="ECOF SERVICE Pty Ltd" data-col="year">2017</p>
-                        <i class="far fa-circle text-secondary small" aria-hidden="true"></i>
-                        <div class="line bg-secondary"></div>
-                    </div>
-                    <div class="pt-4">
-                        <h5 class="chginput expchginput py-2" data-id="ECOF SERVICE Pty Ltd" data-col="title">Supervisor(FullTime)</h5>
-                        <p>ECOF SERVICE Pty Ltd</p>
-                        <p class="chginput expchginput" data-id="ECOF SERVICE Pty Ltd" data-col="period">2017/06-2017/12</p>
-                        <p class="chginput expchginput" data-id="ECOF SERVICE Pty Ltd" data-col="event">Entry Scanning/Entry/Picking Goods/Packing/Cushion<br>帶領15人左右團隊，控管進度、分配工作、處理突發狀況，與進貨部門協調，並完成主管交代事項。</p>
-                    </div>
-                </div>
-
-        
-                <div class="expblock mb-4 pr-5 d-flex flex-row">
-                    <div class="timeline d-flex flex-column align-items-center pr-3">
-                        <p class="chginput expchginput text-secondary" data-id="尚澄室內設計" data-col="year">2016</p>
-                        <i class="far fa-circle text-secondary small" aria-hidden="true"></i>
-                        <div class="line bg-secondary"></div>
-                    </div>
-                    <div class="pt-4">
-                        <h5 class="chginput expchginput py-2" data-id="尚澄室內設計" data-col="title">設計助理</h5>
-                        <p>尚澄室內設計</p>
-                        <p class="chginput expchginput" data-id="尚澄室內設計" data-col="period">2016/08-2017/03</p>
-                        <p class="chginput expchginput" data-id="尚澄室內設計" data-col="event">．工務監工<br>．圖面繪製<br>．資料庫系統化</p>
-                    </div>
-                </div>
-
-        
-                <div class="expblock mb-4 pr-5 d-flex flex-row">
-                    <div class="timeline d-flex flex-column align-items-center pr-3">
-                        <p class="chginput expchginput text-secondary" data-id="象設計集團" data-col="year">2014</p>
-                        <i class="far fa-circle text-secondary small" aria-hidden="true"></i>
-                        <div class="line bg-secondary"></div>
-                    </div>
-                    <div class="pt-4">
-                        <h5 class="chginput expchginput py-2" data-id="象設計集團" data-col="title">景觀/規劃設計 實習生</h5>
-                        <p>象設計集團</p>
-                        <p class="chginput expchginput" data-id="象設計集團" data-col="period">2014/07-2014/08</p>
-                        <p class="chginput expchginput" data-id="象設計集團" data-col="event">．圖面繪製<br>．模型製作</p>
-                    </div>
-                </div>
-
-        
-
+    <div class="row">
+      <div class="col-lg-6">
+        <h3 class="resume-title">Summary</h3>
+        <div class="resume-item pb-0">
+          <h4>name</h4>
+          <p><em>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis illum dolore ut dolores id nobis explicabo voluptates soluta iusto fugiat!</em></p>
+          <p>
+            <ul>
+              <li>New Taipei City, Taiwan</li>
+              <li>test@msn.com</li>
+            </ul>
+          </p>
         </div>
-    </article>
-  </section>
-  <!-- Ability -->
-  <section id="lokifood" class="container py-5">
+
+        <h3 class="resume-title">Education</h3>
+        <div class="resume-item">
+          <h4>ppppppppp</h4>
+          <h5>20000000000000</h5>
+          <p><em>lorem59rgrswa</em></p>
+          <p>
+            <ul>
+              <li>HTML5/CSS3</li>
+              <li>JavaScript/JQuery</li>
+              <li>PHP/MySQL</li>
+            </ul>
+          </p>
+        </div>
+        <div class="resume-item">
+          <h4>Lorem, ipsum dolor.</h4>
+          <h5>20000000000000</h5>
+          <p><em>fwpjiopji[f</em></p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias magnam adipisci eius, ducimus quia iusto ratione hic quod optio quos!</p>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <h3 class="resume-title">Work Experience</h3>
+        <div class="resume-item">
+          <h4>Lorem, ipsum dolor.</h4>
+          <h5>20000000000000</h5>
+          <p><em>Lorem ipsum dolor sit amet.</em></p>
+          <p>
+            <ul>
+              <li>Lorem ipsum dolor sit amet.</li>
+              <li>Lorem ipsum dolor sit amet.</li>
+              <li>Lorem ipsum dolor sit amet.</li>
+              <li>Lorem ipsum dolor sit amet.</li>
+              <li>Lorem ipsum dolor sit amet.</li>
+            </ul>
+          </p>
+        </div>
+        <div class="resume-item">
+          <h4>Lorem ipsum dolor sit amet.</h4>
+          <h5>2000000000</h5>
+          <p><em>200000000</em></p>
+          <p>
+            <ul>
+              <li>lorem22222222222222</li>
+              <li>lorem58948652hiuohu
+                  <ul>
+                    <br>
+                    <li>lorem5</li>
+                    <li>lorem22222222222222 </li>
+                    <li>lorem22222222222222 </li>
+                  </ul>
+              </li>
+              <li>lorem22222222222222</li>
+            </ul>
+          </p>
+        </div>
+      </div>
+    </div>
+</section>
+  <!-- skills -->
+  <section id="skills" class="container py-5">
     <header class="text-center">
-      <h2 class="text-info pb-3">Ability</h2>
+      <h2 class="text-info pb-3">Skills</h2>
     </header>
-    <article class="container px-0">
-      <ul class="list-unstyled row">
-        <li class="media flex-column align-items-center flex-sm-row align-items-sm-start col-lg-6 mb-4" data-jojo-duration="2s" data-jojo-delay="5s">
-          <img src="https://fakeimg.pl/300x300" class="pb-3 col-sm-6 jojo animate__animated">
-          <div class="media-body col-sm-6">
-            <h5 class="mt-0 mb-1">Photoshop</h5>
-            <p class="pb-3 border-bottom border-info">擔任…學習到….(簡述) </p>
+    <article class="py-5 row">
+      <!-- tab content -->
+      <div class="col-12 col-lg-6 tab-content mb-3">
+        <img src="https://picsum.photos/600/400/?random=1" id="skillsimg1"
+          class="w-100 img-thumbnail tab-pane fade show active">
+        <img src="https://picsum.photos/600/400/?random=2" id="skillsimg2" class="w-100 img-thumbnail tab-pane fade">
+        <img src="https://picsum.photos/600/400/?random=3" id="skillsimg3" class="w-100 img-thumbnail tab-pane fade">
+      </div>
+      <!-- Accordion -->
+      <div class="col-12 col-lg-6 accordion list-group px-3" id="skillsmenu">
+	    
+        <div class="card" data-toggle="list" data-target="#skillsimg1">
+          <a href="#skillsmsg1" class="card-header h5 text-decoration-none alert-info" data-toggle="collapse">
+            sk1
+            <small class="text-muted float-right">description</small>
+          </a>
+          <div id="skillsmsg1" data-parent="#skillsmenu" class="collapse show">
+            <div class="card-body">
+              <p></p>
+              <p class="float-right text-danger">
+              </p>
+            </div>
           </div>
-        </li>
-        <li class="media flex-column align-items-center flex-sm-row align-items-sm-start col-lg-6 mb-4">
-          <img src="https://fakeimg.pl/300x300" class="pb-3 col-sm-6 jojo animate__animated">
-          <div class="media-body col-sm-6">
-            <h5 class="mt-0 mb-1">illustrator</h5>
-            <p class="pb-3 border-bottom border-info">家裡蹲……..</p>
+        </div>
+        <div class="card" data-toggle="list" data-target="#skillsimg2">
+          <a href="#skillsmsg2" class="card-header h5 text-decoration-none alert-info" data-toggle="collapse">Item #2</a>
+          <div id="skillsmsg2" data-parent="#skillsmenu" class="collapse">
+            <div class="card-body">...B</div>
           </div>
-        </li>
-        <li class="media flex-column align-items-center flex-sm-row align-items-sm-start col-lg-6 mb-4" data-jojo-duration="2s" data-jojo-delay="5s">
-          <img src="https://fakeimg.pl/300x300" class="pb-3 col-sm-6 jojo animate__animated">
-          <div class="media-body col-sm-6">
-            <h5 class="mt-0 mb-1">html</h5>
-            <p class="pb-3 border-bottom border-info">擔任…學習到….(簡述) </p>
+        </div>
+        <div class="card" data-toggle="list" data-target="#skillsimg3">
+          <a href="#skillsmsg3" class="card-header h5 text-decoration-none alert-info" data-toggle="collapse">Item #3</a>
+          <div id="skillsmsg3" data-parent="#skillsmenu" class="collapse">
+            <div class="card-body">...C</div>
           </div>
-        </li>
-        <li class="media flex-column align-items-center flex-sm-row align-items-sm-start col-lg-6 mb-4">
-          <img src="https://fakeimg.pl/300x300" class="pb-3 col-sm-6 jojo animate__animated">
-          <div class="media-body col-sm-6">
-            <h5 class="mt-0 mb-1">css</h5>
-            <p class="pb-3 border-bottom border-info">家裡蹲……..</p>
-          </div>
-        </li>
-        <li class="media flex-column align-items-center flex-sm-row align-items-sm-start col-lg-6 mb-4" data-jojo-duration="2s" data-jojo-delay="5s">
-          <img src="https://fakeimg.pl/300x300" class="pb-3 col-sm-6 jojo animate__animated">
-          <div class="media-body col-sm-6">
-            <h5 class="mt-0 mb-1">bootstrap</h5>
-            <p class="pb-3 border-bottom border-info">擔任…學習到….(簡述) </p>
-          </div>
-        </li>
-        <li class="media flex-column align-items-center flex-sm-row align-items-sm-start col-lg-6 mb-4">
-          <img src="https://fakeimg.pl/300x300" class="pb-3 col-sm-6 jojo animate__animated">
-          <div class="media-body col-sm-6">
-            <h5 class="mt-0 mb-1">Javascript</h5>
-            <p class="pb-3 border-bottom border-info">家裡蹲……..</p>
-          </div>
-        </li>
-        <li class="media flex-column align-items-center flex-sm-row align-items-sm-start col-lg-6 mb-4" data-jojo-duration="2s" data-jojo-delay="5s">
-          <img src="https://fakeimg.pl/300x300" class="pb-3 col-sm-6 jojo animate__animated">
-          <div class="media-body col-sm-6">
-            <h5 class="mt-0 mb-1">JQuery</h5>
-            <p class="pb-3 border-bottom border-info">擔任…學習到….(簡述) </p>
-          </div>
-        </li>
-        <li class="media flex-column align-items-center flex-sm-row align-items-sm-start col-lg-6 mb-4">
-          <img src="https://fakeimg.pl/300x300" class="pb-3 col-sm-6 jojo animate__animated">
-          <div class="media-body col-sm-6">
-            <h5 class="mt-0 mb-1">Ajax</h5>
-            <p class="pb-3 border-bottom border-info">家裡蹲……..</p>
-          </div>
-        </li>
-        <li class="media flex-column align-items-center flex-sm-row align-items-sm-start col-lg-6 mb-4" data-jojo-duration="2s" data-jojo-delay="5s">
-          <img src="https://fakeimg.pl/300x300" class="pb-3 col-sm-6 jojo animate__animated">
-          <div class="media-body col-sm-6">
-            <h5 class="mt-0 mb-1">MySQL</h5>
-            <p class="pb-3 border-bottom border-info">擔任…學習到….(簡述) </p>
-          </div>
-        </li>
-        <li class="media flex-column align-items-center flex-sm-row align-items-sm-start col-lg-6 mb-4">
-          <img src="https://fakeimg.pl/300x300" class="pb-3 col-sm-6 jojo animate__animated">
-          <div class="media-body col-sm-6">
-            <h5 class="mt-0 mb-1">PHP</h5>
-            <p class="pb-3 border-bottom border-info">家裡蹲……..</p>
-          </div>
-        </li>
-      </ul>
+        </div>
+      </div>
     </article>
   </section>
   <!-- Portfolio -->
-  <!-- section#lokitrans.container.py-5>header.text-center>h2.text-info.pb-3^art.py-5 -->
-  <section id="lokitrans" class="embed-responsive py-5">
-    <iframe class="embed-responsive-item" allowfullscreen
-      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d620.8065759507045!2d121.41989356067133!3d25.043701902986367!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a7bec9ad74b1%3A0xa639904a89f26435!2z5Yue5YuV6YOo5Yue5YuV5Yqb55m85bGV572y5YyX5Z-65a6c6Iqx6YeR6aas5YiG572y5rOw5bGx6IG35qWt6KiT57e05aC0!5e0!3m2!1szh-TW!2stw!4v1606440606443!5m2!1szh-TW!2stw"></iframe>
-    <article class="container pb-5">
-      <div class="row">
-        <header class="col-12 col-lg-6 text-center">
-          <h2 class="card text-info py-2 mb-4">Portfolio</h2>
-        </header>
-        <div class="col-12"></div>
-        <div class="col-12 col-lg-6">
+  <section id="portfolio" class="container py-5">
+    <header class="text-center">
+      <h2 class="text-info pb-3">portfolio</h2>
+    </header>
+    <article class="tab-content py-5">
+      <div class="row tab-pane fade show active" id="roomA">
+        <div class="col-12 col-md-6 col-lg-4 mb-5">
           <div class="card">
+            <img src="https://fakeimg.pl/300x200" class="card-img-top">
             <div class="card-body">
-              <img src="https://fakeimg.pl/300x300" class="pb-3 col-sm-6">
+              <h5>Lorem.</h5>
+              <p class="card-text">Lorem, ipsum dolor.<small class="text-muted float-right">Lorem | Lorem</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 mb-5">
+          <div class="card">
+            <img src="https://fakeimg.pl/300x200" class="card-img-top">
+            <div class="card-body">
+              <h5>Lorem</h5>
+              <p class="card-text">Lorem<small class="text-muted float-right">Lorem |Lorem</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 mb-5">
+          <div class="card">
+            <img src="https://fakeimg.pl/300x200" class="card-img-top">
+            <div class="card-body">
+              <h5>Lorem</h5>
+              <p class="card-text">Lorem<small class="text-muted float-right">Lorem | Lorem</small></p>
             </div>
           </div>
         </div>
@@ -258,71 +347,81 @@
     </article>
   </section>
   <!-- Contact -->
-  <section id="lokicontact" class="bg-dark text-white py-5">
+  <section id="contact" class="bg-dark text-white py-5">
+    <header class="container text-center">
+      <h2 class="text-info pb-3">Contact</h2>
+    </header>
+    <article class="container px-0">
+      <p class="text-center"><?=$tb5->all()[0]["text"]?></p>
+    </article>
+
+  </section>
+  <!-- <section id="contact" class="bg-dark text-white py-5">
     <header class="container text-center">
       <h2 class="text-info pb-3">Contact</h2>
     </header>
     <article class="container py-5">
-      <ul class="list-unstyled row">
-        <li class="media flex-column align-items-center flex-sm-row align-items-sm-start col-lg-6 mb-4" data-jojo-duration="2s" data-jojo-delay="5s">
-          <div class="media-body col-sm-6">
-            <h5 class="mt-0 mb-1">Email  </h5>
-            <p class="pb-3 border-bottom border-info">擔任…學習到….(簡述) </p>
+      <form class="row">
+        <div class="form-group col-12 col-md-6">
+          <label for="cid_name">訪客姓名</label>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" id="cid_name" placeholder="Full Name" name="formName" required>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <div class="form-check-inline custom-control custom-radio">
+                  <input class="custom-control-input" type="radio" name="formSex" id="cid_man" value="boy">
+                  <label class="custom-control-label" for="cid_man">先生</label>
+                </div>
+                <div class="form-check-inline custom-control custom-radio">
+                  <input class="custom-control-input" type="radio" name="formSex" id="cid_woman" value="girl">
+                  <label class="custom-control-label" for="cid_woman">女士</label>
+                </div>
+              </div>
+            </div>
           </div>
-        </li>
-        <li class="media flex-column align-items-center flex-sm-row align-items-sm-start col-lg-6 mb-4" data-jojo-duration="2s" data-jojo-delay="5s">
-          <div class="media-body col-sm-6">
-            <h5 class="mt-0 mb-1">Codepen  </h5>
-            <p class="pb-3 border-bottom border-info">擔任…學習到….(簡述) </p>
+        </div>
+        <div class="form-group col-12 col-md-6">
+          <label for="cid_tel">連絡電話</label>
+          <div class="input-group mb-3">
+            <input type="tel" class="form-control" id="cid_tel" placeholder="Phone Number" name="formTel" required>
           </div>
-        </li>
-        <li class="media flex-column align-items-center flex-sm-row align-items-sm-start col-lg-6 mb-4" data-jojo-duration="2s" data-jojo-delay="5s">
-          <div class="media-body col-sm-6">
-            <h5 class="mt-0 mb-1">github  </h5>
-            <p class="pb-3 border-bottom border-info">擔任…學習到….(簡述) </p>
+        </div>
+        <div class="form-group col-12 col-md-6">
+          <label for="cid_mail">電子信箱</label>
+          <div class="input-group mb-3">
+            <input type="email" class="form-control" id="cid_mail" placeholder="Email Address" name="formMail" required>
           </div>
-        </li>
-	  </ul>
+        </div>
+        <div class="form-group col-12 col-md-6">
+          <label for="cid_que">問題類型</label>
+          <select class="custom-select mb-3" id="cid_que" name="formQue">
+            <option value="type1">type1</option>
+            <option value="type2">type2</option>
+            <option value="其他">其他</option>
+          </select>
+        </div>
+        <div class="form-group col-12">
+          <label for="cid_msg">問題類型</label>
+          <textarea class="form-control" id="cid_msg" rows="3" name="message"
+            placeholder="Write Your Message"></textarea>
+        </div>
+        <div class="form-group col-12 text-center">
+          <small class="text-muted">請如實填寫便於信件回覆，我們保證不隨意公開您的留言資訊</small>
+          <hr class="border-secondary">
+          <button type="submit" class="btn btn-primary">確認送出</button>
+        </div>
+      </form>
     </article>
-  </section>
-  <section id="#lokiads" class="bg-secondary text-center py-5 text-light">
-    <div class="d-flex justify-content-center align-items-center flex-wrap">
-      <a href="https://www.facebook.com/tsvts/" target="_blank" class="border p-4 m-3 text-light">
-        <i class="fab fa-facebook fa-3x pb-2"></i><br>
-        泰山職訓中心
-      </a>
-      <a href="https://tkyhkm.wda.gov.tw/Default.aspx" target="_blank">
-        <img src="media/001.png" alt="勞動部勞動力發展署北基宜花金馬分署全球資訊網">
-      </a>
-      <a href="https://www.taiwanjobs.gov.tw/home109/index.aspx" target="_blank">
-        <img src="media/002.png" alt="台灣就業通">
-      </a>
-    </div>
-    <div>
-      電話：<a href="tel:0229018274" class="text-light">02-2901-8274</a>
-      　｜　
-      傳真：02-2908-4773
-      　｜　
-      信箱：<a href="mailto:service@toyugi.com.tw" class="text-light">service@toyugi.com.tw</a>
-      <address>
-        <a href="https://goo.gl/maps/WRvauAJPufCKyJ8F8" target="_blank" class="text-light">243新北市泰山區貴子里致遠新村55之1號</a>
-      </address>
-    </div>
-  </section>
-
+  </section> -->
   <!-- 頁尾區 -->
-<footer class="bg-dark text-muted text-center py-2">
-
-    <small><br> copyright &copy; <span class="text-warning">Chen</span>. All rights reserved</small>
-
- 
-
-    <a href="#Slider" class="btn btn-info position-fixed">
-
+  <footer class="bg-dark text-muted text-center py-2" id="footer">
+  <small>&copy; copyright <span class="text-warning">By Chia Yu Chen</span>. All rights reserved</small>
+  <a href="index_back.php?do=login" target="_self" class="text-dark">
+    <span class="material-icons">login</span>
+  </a>
+    <a href="#slider" class="btn btn-info position-fixed" id="top">
       <i class="fas fa-angle-double-up fa-2x"></i>
-
     </a>
-	<a href="index_back.php?do=login">登入後台</a>
   </footer>
 </body>
 

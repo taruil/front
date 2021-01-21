@@ -50,7 +50,7 @@ $uploadimg=[
 class DB{
 
     protected $table;
-    protected $dsn="mysql:host=localhost;dbname=db09;charset=utf8";
+    protected $dsn="mysql:host=localhost;dbname=rsm;charset=utf8";
     protected $pdo;
 
     function __construct($table){
