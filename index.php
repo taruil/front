@@ -107,9 +107,17 @@ include_once "base.php";
         </div>
         <div class="col-12 col-md-6 col-lg-4 mb-5">
           <h4 class="text-primary">求職條件</h4>
+		<?php
+        $rows=$tb6->all();
+
+        foreach($rows as $row){
+        ?>
           <p class="col-12 text-muted text-center mb-5">
-            <?=$tb6->all()[0]["text"]?>
+            <?=$row["text"]?>
           </p>
+		<?php
+        }
+        ?>
         </div>
       </div>
     </article>
