@@ -30,7 +30,7 @@
     </div>
     
     <div id="main">
-        <a title="<?=$Title->find(['sh'=>1])['text'];?>" href="index_back.php">
+        <a title="My Resume" href="index_back.php">
             <div class="ti" style="background:url(&#39;img/<?=$Title->find(['sh'=>1])['img'];?>&#39;); background-size:cover;"></div> <!-- 有顯示的那張圖'sh'=1 -->
             <!--標題-->
         </a>
@@ -75,7 +75,7 @@
                     </a>
                 </div>
                 <div class="dbor" style="margin:3px; width:95%; height:20%; line-height:100px;">
-                    <span class="t">進站總人數 :1 </span>
+                    <span class="t">進站總人數 :1</span>
                 </div>
             </div>
             <div class="di"
