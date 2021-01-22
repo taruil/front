@@ -103,7 +103,15 @@ include_once "base.php";
           <img src="media/rabbit.jpg">
         </div>
         <div class="col-12 col-md-6 col-lg-4 mb-5">
-          <p class="col-12 text-muted text-center mb-5"><?=$tb1->all()[0]["text"]?></p>
+		<?php
+        $rows=$tb1->all();
+
+        foreach($rows as $row){
+        ?>
+          <p class="col-12 text-muted text-center mb-5"><?=$row["text"]?></p>
+		<?php
+        }
+        ?>
         </div>
         <div class="col-12 col-md-6 col-lg-4 mb-5">
           <h4 class="text-primary">求職條件</h4>
