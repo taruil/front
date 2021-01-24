@@ -1,4 +1,5 @@
 <div class="di" style="height:540px; border:#999 1px solid; width:53.2%; margin:2px 0px 0px 0px; float:left; position:relative; left:20px;">
+            
                     <div style="height:32px; display:block;"></div>
                     <span class="t botli">更多最新消息顯示區</span>
 

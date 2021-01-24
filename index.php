@@ -104,7 +104,7 @@ include_once "base.php";
         </div>
         <div class="col-12 col-md-6 col-lg-4 mb-5">
 		<?php
-        $rows=$tb1->all();
+        $rows=$tb1->all("where sh = 1");
 
         foreach($rows as $row){
         ?>
@@ -116,7 +116,7 @@ include_once "base.php";
         <div class="col-12 col-md-6 col-lg-4 mb-5">
           <h4 class="text-primary">求職條件</h4>
 		<?php
-        $rows=$tb6->all();
+        $rows=$tb6->all("where sh = 1");
 
         foreach($rows as $row){
         ?>
@@ -215,7 +215,7 @@ include_once "base.php";
           <p>
             <ul>
 			  <?php
-                $rows=$tb2->all();
+                $rows=$tb2->all("where sh = 1");
 
                 foreach($rows as $row){
               ?>
@@ -246,7 +246,7 @@ include_once "base.php";
       <div class="col-12 col-lg-6 accordion list-group px-3" id="skillsmenu">
 		<?php
 		$skill_count=0;
-        $rows=$tb3->all();
+        $rows=$tb3->all("where sh = 1");
 
         foreach($rows as $row){
 			$skill_count++;
@@ -271,7 +271,7 @@ include_once "base.php";
     <article class="tab-content py-5">
       <div class="row tab-pane fade show active" id="roomA">
 		<?php
-        $rows=$tb4->all();
+        $rows=$tb4->all("where sh = 1");
 
         foreach($rows as $row){
         ?>
@@ -296,7 +296,15 @@ include_once "base.php";
       <h2 class="text-info pb-3">Contact</h2>
     </header>
     <article class="container px-0">
-      <p class="text-center"><?=$tb5->all()[0]["text"]?></p>
+		<?php
+        $rows=$tb5->all("where sh = 1");
+
+        foreach($rows as $row){
+        ?>
+      <p class="text-center"><?=$row["text"]?></p>
+		<?php
+		}
+        ?>
     </article>
 
   </section>

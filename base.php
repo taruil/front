@@ -50,12 +50,12 @@ $uploadimg=[
 class DB{
 
     protected $table;
-    protected $dsn="mysql:host=localhost;dbname=s1090409;charset=utf8";
+    protected $dsn="mysql:host=localhost;dbname=rsm;charset=utf8";
     protected $pdo;
 
     function __construct($table){
         $this->table=$table;
-        $this->pdo=new PDO($this->dsn,'s1090409','s1090409');
+        $this->pdo=new PDO($this->dsn,'root','');
 
     }
 
@@ -187,7 +187,7 @@ $row=$Title->find(1);
 print_r($row);
 $Title->del(1); */
 
-$Admin=new DB("rsm_admin");
+$Admin=new DB("admin");
 $tb1=new DB("tb1");
 $tb2=new DB("tb2");
 $tb3=new DB("tb3");
@@ -196,7 +196,7 @@ $tb5=new DB("tb5");
 $tb6=new DB("tb6");
 
 //進站總人數，寫在變數宣告之後
-if(empty($_SESSION['total'])){
+/* if(empty($_SESSION['total'])){
     $total=$Total->find(1);
     // $total['total']=$total['total']+1;同下
     $total['total']++;
@@ -204,6 +204,6 @@ if(empty($_SESSION['total'])){
     $_SESSION['total']=$total['total'];
 
     
-}
+} */
 
 ?> 
