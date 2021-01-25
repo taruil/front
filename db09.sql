@@ -109,8 +109,6 @@ ALTER TABLE `tb2`
 CREATE TABLE `tb3` (
   `id` int(11) UNSIGNED ZEROFILL NOT NULL,
   `text` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `text2` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `text3` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `img` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `sh` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -136,6 +134,8 @@ ALTER TABLE `tb3`
 CREATE TABLE `tb4` (
   `id` int(11) UNSIGNED ZEROFILL NOT NULL,
   `text` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `text2` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `text3` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `img` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `sh` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

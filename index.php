@@ -9,9 +9,9 @@ include_once "base.php";
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chia Yu Chen's Resume</title>
+  <link rel="icon" href="img/rb3.png">
   <link rel="stylesheet" href="plugin/bootstrap.min.css">
   <link rel="stylesheet" href="plugin/style.css">
-  <link rel="shortcut icon" href="media/favicon.ico" type="image/x-icon">
 
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Open+Sans&display=swap" rel="stylesheet">
@@ -28,7 +28,7 @@ include_once "base.php";
 
 <body>
   <!-- 選單區 -->
-  <header class="fixed-top bg-dark" id="Menu">
+  <header class="fixed-top bg-dark " id="Menu">
     <nav class="navbar navbar-expand-lg navbar-dark container">
       <a class="navbar-brand" href="./">My Resume</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#minMenu">
@@ -93,9 +93,9 @@ include_once "base.php";
     </a>
   </section>
   <!-- About -->
-  <section id="about" class="py-5 text-white">
+  <section id="about" class="container py-5 mt-3 section-bg text-white ">
     <header class="text-center container">
-      <h2 class="pb-3">About</h2>
+      <h2 class="text-info pb-3">About</h2>
     </header>
     <article class="tab-content py-5">
       <div class="row tab-pane fade show active">
@@ -115,6 +115,9 @@ include_once "base.php";
         </div>
         <div class="col-12 col-md-6 col-lg-4 mb-5">
           <h4 class="text-primary">求職條件</h4>
+          <div class="text-center">
+
+          
 		<?php
         $rows=$tb6->all("where sh = 1");
 
@@ -126,90 +129,16 @@ include_once "base.php";
 		<?php
         }
         ?>
+          </div>
         </div>
       </div>
     </article>
   </section>
-  <!-- <section id="about" class="py-5">
-    <header class="text-center container">
-      <h2 class="text-info mt-5">About Me</h2>
-    </header>
-    <article class="tab-content py-5">
-      <div class="row tab-pane fade show active">
-        <div class="col-12 col-md-6 col-lg-4 mb-5">
-          <img src="media/rabbit.jpg">
-        </div>
-        <div class="col-12 col-md-6 col-lg-4 mb-5">
-          <p class="col-12 text-muted text-center mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, expedita ex quia laboriosam cum impedit soluta veritatis dicta ullam earum, odio nam voluptates eos itaque corporis ipsum. Quibusdam, rem repellendus.</p>
-        </div>
-      </div>
-    </article>
-  </section> -->
-  <!-- experience -->
-  <!-- <section id="experience" class="py-5 text-white">
-    <header class="text-center container">
-      <h2 class="pb-3">Experience</h2>
-    </header>
-    <article class="container px-0">
-      <ul class="list-unstyled row">
-        <li class="media flex-column align-items-center flex-sm-row align-items-sm-start col-lg-6 mb-4" data-jojo-duration="2s" data-jojo-delay="5s">
-          <img src="https://fakeimg.pl/300x300" class="pb-3 col-sm-6 jojo animate__animated">
-          <div class="media-body col-sm-6">
-            <h5 class="mt-0 mb-1">based media object</h5>
-            <p class="pb-3 border-bottom border-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore,
-              corporis!</p>
-          </div>
-        </li>
-        <li class="media flex-column align-items-center flex-sm-row align-items-sm-start col-lg-6 mb-4">
-          <img src="https://fakeimg.pl/300x300" class="pb-3 col-sm-6 jojo animate__animated">
-          <div class="media-body col-sm-6">
-            <h5 class="mt-0 mb-1">based media object</h5>
-            <p class="pb-3 border-bottom border-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore,
-              corporis!</p>
-          </div>
-        </li>
-        <li class="media flex-column align-items-center flex-sm-row align-items-sm-start col-lg-6 mb-4" data-jojo-duration="2s" data-jojo-delay="5s">
-          <img src="https://fakeimg.pl/300x300" class="pb-3 col-sm-6 jojo animate__animated">
-          <div class="media-body col-sm-6">
-            <h5 class="mt-0 mb-1">based media object</h5>
-            <p class="pb-3 border-bottom border-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore,
-              corporis!</p>
-          </div>
-        </li>
-        <li class="media flex-column align-items-center flex-sm-row align-items-sm-start col-lg-6 mb-4">
-          <img src="https://fakeimg.pl/300x300" class="pb-3 col-sm-6 jojo animate__animated">
-          <div class="media-body col-sm-6">
-            <h5 class="mt-0 mb-1">based media object</h5>
-            <p class="pb-3 border-bottom border-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore,
-              corporis!</p>
-          </div>
-        </li>
-        <li class="media flex-column align-items-center flex-sm-row align-items-sm-start col-lg-6 mb-4" data-jojo-duration="2s" data-jojo-delay="5s">
-          <img src="https://fakeimg.pl/300x300" class="pb-3 col-sm-6 jojo animate__animated">
-          <div class="media-body col-sm-6">
-            <h5 class="mt-0 mb-1">based media object</h5>
-            <p class="pb-3 border-bottom border-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore,
-              corporis!</p>
-          </div>
-        </li>
-        <li class="media flex-column align-items-center flex-sm-row align-items-sm-start col-lg-6 mb-4">
-          <img src="https://fakeimg.pl/300x300" class="pb-3 col-sm-6 jojo animate__animated">
-          <div class="media-body col-sm-6">
-            <h5 class="mt-0 mb-1">based media object</h5>
-            <p class="pb-3 border-bottom border-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore,
-              corporis!</p>
-          </div>
-        </li>
-      </ul>
-    </article>
-  </section> -->
   <!-- experience -->
 	<section id="experience" class="container experience py-5 mt-3 section-bg text-white section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Experience</h2>
-        </div>
+    <header class="text-center container section-title">
+      <h2 class="text-info pb-3">Experience</h2>
+    </header>
 		<?php
           $rows=$tb2->all("where sh = 1");
 
@@ -270,7 +199,7 @@ include_once "base.php";
   <!-- Portfolio -->
   <section id="portfolio" class="container py-5">
     <header class="text-center">
-      <h2 class="text-info pb-3">portfolio</h2>
+      <h2 class="text-info pb-3">Portfolio</h2>
     </header>
     <article class="tab-content py-5">
       <div class="row tab-pane fade show active" id="roomA">
