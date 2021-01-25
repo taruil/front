@@ -4,9 +4,13 @@
         <table width="100%">
             <tbody>
                 <tr class="yel">
-                    <td width="70%">最新消息資料內容</td>
+                    <td width="10%">作品名稱</td>
+					<td width="10%">作品說明</td>
+					<td width="10%">連結</td>
+					<td width="40%">資料圖片</td>
                     <td width="10%">顯示</td>
                     <td width="10%">刪除</td>
+					<td width="10%"></td>
 
                 </tr>
                 <?php
@@ -25,8 +29,16 @@
                 <td>
                     <textarea name="text[]" id="" style="width:95%;height:60px"><?=$row['text'];?></textarea>
                 </td>
+                <td>
+                    <textarea name="text2[]" id="" style="width:95%;height:60px"><?=$row['text2'];?></textarea>
+                </td>
+                <td>
+                    <textarea name="text3[]" id="" style="width:95%;height:60px"><?=$row['text3'];?></textarea>
+                </td>
+				<td class="cent"><img src="./img/<?=$row['img'];?>" style="width:100px;height:68px"></td>
                 <td ><input type="checkbox" name="sh[]" value="<?=$row['id'];?>" <?=($row['sh']==1)?'checked':'';?>></td> <!--type改checkbox 可多選，同時sh改sh[]陣列形式，表示可存多筆資料 -->
                 <td ><input type="checkbox" name="del[]" value="<?=$row['id'];?>"></td>
+				<td><input type="button" value="更新圖片" onclick="op('#cover','#cvr','./modal/upload.php?table=<?=$do;?>&id=<?=$row['id'];?>')"></td>
                 <input type="hidden" name="id[]" value="<?=$row['id'];?>">
                 </tr>
                 <?php

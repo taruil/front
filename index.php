@@ -281,10 +281,12 @@ include_once "base.php";
         ?>
         <div class="col-12 col-md-6 col-lg-4 mb-5">
           <div class="card">
-            <img src="<?=$row["text"]?>" class="card-img-top">
+		    <a href="<?=$row["text3"]?>">
+            <img src="./img/<?=$row['img'];?>" class="card-img-top">
+			</a>
             <div class="card-body">
-              <h5>Lorem.</h5>
-              <p class="card-text">Lorem, ipsum dolor.<small class="text-muted float-right">Lorem | Lorem</small></p>
+              <h5><?=$row["text"]?></h5>
+              <p class="card-text"><?=$row["text2"]?></p>
             </div>
           </div>
         </div>

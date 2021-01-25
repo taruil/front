@@ -43,6 +43,7 @@ $uploadimg=[
     'image'=>['更新校園映像圖片','校園映像圖片'],
     'mvim'=>['更換動畫圖片','動畫圖片'],
     'title'=>['更新網站標題圖片','網站標題圖片'],
+	'tb4'=>['更新作品集圖片','作品集圖片'],
 
 ];
 
@@ -172,7 +173,6 @@ function to($url){
 //base打完先到db建一張資料表title>text,id,img,sh，並令$Title=new DB("title")...
 //測完記得關掉全部指令!!
 
-$Title=new DB("title");
 /* $data=['text'=>"第一筆資料",
         'img'=>'t001.jpg',
         'sh'=>1
