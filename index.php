@@ -114,7 +114,7 @@ include_once "base.php";
         ?>
         </div>
         <div class="col-12 col-md-6 col-lg-4 mb-5">
-          <h4 class="text-primary">求職條件</h4>
+          <h4 class="text-primary text-center">求職條件</h4>
           <div class="text-center">
 
           
