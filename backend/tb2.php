@@ -4,7 +4,10 @@
         <table width="100%">
             <tbody>
                 <tr class="yel">
-                    <td width="70%">最新消息資料內容</td>
+                    <td width="19%">text</td>
+					<td width="17%">text2</td>
+					<td width="17%">text3</td>
+					<td width="17%">text4</td>
                     <td width="10%">顯示</td>
                     <td width="10%">刪除</td>
 
@@ -24,6 +27,15 @@
                 <tr>
                 <td>
                     <textarea name="text[]" id="" style="width:95%;height:60px"><?=$row['text'];?></textarea>
+                </td>
+                <td>
+                    <textarea name="text2[]" id="" style="width:95%;height:60px"><?=$row['text2'];?></textarea>
+                </td>
+				<td>
+                    <textarea name="text3[]" id="" style="width:95%;height:60px"><?=$row['text3'];?></textarea>
+                </td>
+                <td>
+                    <textarea name="text4[]" id="" style="width:95%;height:60px"><?=$row['text4'];?></textarea>
                 </td>
                 <td ><input type="checkbox" name="sh[]" value="<?=$row['id'];?>" <?=($row['sh']==1)?'checked':'';?>></td> <!--type改checkbox 可多選，同時sh改sh[]陣列形式，表示可存多筆資料 -->
                 <td ><input type="checkbox" name="del[]" value="<?=$row['id'];?>"></td>

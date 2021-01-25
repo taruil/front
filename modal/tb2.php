@@ -4,7 +4,18 @@
 <table>
     <tr>
         <td style="vertical-align:top">內容</td>
-        <td><textarea name="text" style="width:400px;height:200px;"></textarea></td>
+    </tr>
+    <tr>
+        <td><textarea name="text" style="width:400px;height:20px;"></textarea></td>
+    </tr>
+    <tr>
+		<td><textarea name="text2" style="width:400px;height:20px;"></textarea></td>
+    </tr>
+    <tr>
+		<td><textarea name="text3" style="width:400px;height:20px;"></textarea></td>
+    </tr>
+    <tr>
+		<td><textarea name="text4" style="width:400px;height:20px;"></textarea></td>
     </tr>
     <tr>
         <td colspan="2">

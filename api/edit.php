@@ -54,8 +54,16 @@ foreach($_POST['id'] as $key => $id){
 
         //已宣告欄位，即使沒有值還是會有該欄位，如此會有進站人數會有noitce訊息，fixed>要加判斷式
         if(!empty($_POST['text'])){
-
-        $row['text']=$_POST['text'][$key];
+			$row['text']=$_POST['text'][$key];
+        }
+        if(!empty($_POST['text2'])){
+			$row['text2']=$_POST['text2'][$key];
+        }
+        if(!empty($_POST['text3'])){
+			$row['text3']=$_POST['text3'][$key];
+        }
+        if(!empty($_POST['text4'])){
+			$row['text4']=$_POST['text4'][$key];
         }
         $db->save($row);
 

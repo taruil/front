@@ -204,31 +204,35 @@ include_once "base.php";
     </article>
   </section> -->
   <!-- experience -->
-  <section id="experience" class="container experience py-5 mt-3 section-bg text-white">
-    <div class="section-title">
-      <h2>Experience</h2>
-    </div>
+	<section id="experience" class="container experience py-5 mt-3 section-bg text-white section-bg">
+      <div class="container">
 
-    <div class="row">
-      <div class="col-lg-6">
-        <div class="resume-item">
-          <p>
-            <ul>
-			  <?php
-                $rows=$tb2->all("where sh = 1");
-
-                foreach($rows as $row){
-              ?>
-              <li><?=$row["text"]?></li>
-			  <?php
-			    }
-              ?>
-            </ul>
-          </p>
+        <div class="section-title">
+          <h2>Experience</h2>
         </div>
+		<?php
+          $rows=$tb2->all("where sh = 1");
+
+          foreach($rows as $row){
+        ?>
+        <div class="row">
+          <div class="col-lg-6">
+            <h3 class="experience-title"><?=$row["text"]?></h3>
+            <div class="experience-item pb-0">
+              <h4><?=$row["text2"]?></h4>
+              <p><em> <?=$row["text3"]?></em></p>
+              <p><?=$row["text4"]?></p>
+              <p></p>
+            </div>
+          </div>
+        </div>
+		<?php
+		  }
+        ?>
+
       </div>
-    </div>
-</section>
+    </section>
+
   <!-- skills -->
   <section id="skills" class="container py-5">
     <header class="text-center">

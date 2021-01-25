@@ -14,6 +14,18 @@ if(!empty($_POST['text'])){
 
     $data['text']=$_POST['text'];
 }
+if(!empty($_POST['text2'])){
+
+    $data['text2']=$_POST['text2'];
+}
+if(!empty($_POST['text3'])){
+
+    $data['text3']=$_POST['text3'];
+}
+if(!empty($_POST['text4'])){
+
+    $data['text4']=$_POST['text4'];
+}
 
 /*新增管理者帳密
 改完backend/admin.php、modal/admin.php後仍無法新增使用者
